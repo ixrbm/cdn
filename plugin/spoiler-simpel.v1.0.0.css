@@ -1,0 +1,35 @@
+<style>
+/* Kotak spoiler */
+.post-body details.spoiler {
+  margin: 24px 0;
+  border: 1px dashed #a1a1aa;
+}
+.post-body .spoiler > summary {
+  display: block;
+  padding: 12px 16px;
+  font-family: monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  list-style: none;
+}
+/* Sembunyikan tanda bawaan */
+.post-body .spoiler > summary::-webkit-details-marker { display: none; }
+.post-body .spoiler > summary::after { display: none; }
+
+/* Tulisan tombol */
+.post-body .spoiler > summary::before { content: "Tampilkan spoiler \25BE"; }
+.post-body .spoiler[open] > summary::before { content: "Sembunyikan spoiler \25B4"; }
+.post-body .spoiler > div {
+  margin: 0;
+  padding: 0 16px 16px;
+}
+
+/* Teks buram sampai diketuk */
+.spoiler-teks {
+  filter: blur(5px);
+  cursor: pointer;
+  outline: none;
+}
+.spoiler-teks:focus { filter: none; }
+</style>
